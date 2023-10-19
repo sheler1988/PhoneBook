@@ -44,7 +44,6 @@
             saveButton.TabIndex = 4;
             saveButton.Text = "&Save";
             saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveButton_Click;
             // 
             // resetButton
             // 
@@ -54,7 +53,6 @@
             resetButton.TabIndex = 5;
             resetButton.Text = "&Reset";
             resetButton.UseVisualStyleBackColor = true;
-            resetButton.Click += resetButton_Click;
             // 
             // fullNameTextBox
             // 
@@ -105,7 +103,6 @@
             MinimumSize = new System.Drawing.Size(347, 213);
             Name = "UpdateProfileForm";
             Text = "Update Profile";
-            Load += UpdateProfileForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

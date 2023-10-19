@@ -1,59 +1,57 @@
-﻿namespace Persistence.Configurations;
+﻿using Domain;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-internal class UserConfiguration : object,
-	Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Domain.User>
+namespace Persistence.Configurations;
+
+internal class UserConfiguration : object, IEntityTypeConfiguration<Domain.Contacts>
 {
 	public UserConfiguration() : base()
 	{
 	}
 
 	public void Configure(Microsoft.EntityFrameworkCore
-		.Metadata.Builders.EntityTypeBuilder<Domain.User> builder)
+		.Metadata.Builders.EntityTypeBuilder<Domain.Contacts> builder)
 	{
 		// **************************************************
 		// **************************************************
 		// **************************************************
 		builder
-			.Property(current => current.Username)
-			.IsUnicode(unicode: false)
+			.Property(current => current.FirstName)
+			.IsUnicode(unicode: true)
 			;
 
 		builder
-			.HasIndex(current => new { current.Username })
+			.HasIndex(current => current.LastName)
 			.IsUnique(unique: true)
 			;
 		// **************************************************
 
 		// **************************************************
 		builder
-			.Property(current => current.Password)
-			.IsUnicode(unicode: false)
+			.Property(current => current.Position)
+			.IsUnicode(unicode: true)
 			;
 		// **************************************************
 
 		// **************************************************
 		builder
-			.HasIndex(current => new { current.FullName })
-			.IsUnique(unique: false)
+			.Property(current =>current.CellPhoneNumber)
 			;
 		// **************************************************
 		// **************************************************
 		// **************************************************
+		builder
+			.Property(current =>current.OfficeNumber)
+			;
 
 		// **************************************************
-		// *** Seed Data ************************************
 		// **************************************************
-		var user =
-			new Domain.User
-			(username: "Dariush", password: "1234512345")
-			{
-				IsAdmin = true,
-				IsActive = true,
-				Description = null,
-				FullName = "Mr. Dariush Tasdighi",
-			};
-
-		builder.HasData(data: user);
+		// **************************************************
+		builder
+			.Property(current => current.EmailAddress)
+			;
+		
 		// **************************************************
 		// **************************************************
 		// **************************************************

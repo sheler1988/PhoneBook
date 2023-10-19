@@ -2,8 +2,7 @@
 
 namespace Persistence;
 
-public class DatabaseContext :
-	Microsoft.EntityFrameworkCore.DbContext
+public class DatabaseContext : Microsoft.EntityFrameworkCore.DbContext
 {
 #pragma warning disable CS8618
 	public DatabaseContext() : base()
@@ -14,13 +13,13 @@ public class DatabaseContext :
 		// **************************************************
 	}
 
-	public Microsoft.EntityFrameworkCore.DbSet<Domain.User> Users { get; set; }
+	public Microsoft.EntityFrameworkCore.DbSet<Domain.Contacts> Contacts { get; set; }
 
 	protected override void OnConfiguring
 		(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder optionsBuilder)
 	{
 		var connectionString =
-			"Server=.;Database=USER_MANAGEMENT;MultipleActiveResultSets=true;Trusted_Connection=True;TrustServerCertificate=True;";
+			"Server=.;Database=Contacts;MultipleActiveResultSets=true;Trusted_Connection=True;TrustServerCertificate=True;";
 
 		// using Microsoft.EntityFrameworkCore;
 		optionsBuilder.UseSqlServer
