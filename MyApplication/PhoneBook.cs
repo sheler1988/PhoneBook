@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Microsoft.VisualBasic.ApplicationServices;
+using Infrastructure;
 
 namespace MyApplication;
 
@@ -41,16 +43,50 @@ public partial class PhoneBookForm : Form
 
 	private void AddButton_Click(object sender, EventArgs e)
 	{
-		var addContactForm = new AddContactForm(this);
+		var addContactForm = new ContactForm(this);
 		addContactForm.ShowDialog();
 	}
 
 	private List<Contacts> ContactList { get; set; }
 
+	//to show a list of contacts
 	public void RefreshContacts()
 	{
+		//to read or right from/to database 
 		var dbContext = new Persistence.DatabaseContext();
-		ContactList = dbContext.Contacts.ToList();
+		ContactList = dbContext.Contacts.OrderBy(c => c.FirstName).ToList();
 		contactListDataGrid.DataSource = ContactList;
+	}
+
+	private void ContactListDataGrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+	{
+		if (e.RowIndex >= 0)
+		{
+			Utility.CurrentContact = contactListDataGrid.Rows[e.RowIndex].DataBoundItem as Contacts;
+			var contactInfo = new ContactForm(this);
+
+			contactInfo.firstNameBox.Text = Utility.CurrentContact.FirstName;
+			contactInfo.lastNameBox.Text = Utility.CurrentContact.LastName;
+			contactInfo.positionBox.Text = Utility.CurrentContact.Position;
+			contactInfo.cellPhoneNumberBox.Text = Utility.CurrentContact.CellPhoneNumber;
+			contactInfo.officePhoneNumberBox.Text = Utility.CurrentContact.OfficeNumber;
+			contactInfo.emailBox.Text = Utility.CurrentContact.EmailAddress;
+
+			contactInfo.firstNameBox.Enabled = false;
+			contactInfo.lastNameBox.Enabled = false;
+			contactInfo.positionBox.Enabled = false;
+			contactInfo.cellPhoneNumberBox.Enabled = false;
+			contactInfo.officePhoneNumberBox.Enabled = false;
+			contactInfo.emailBox.Enabled = false;
+
+			contactInfo.Text = "Contact Information";
+
+			contactInfo.saveButton.Visible = false;
+			contactInfo.resetButton.Visible = false;
+			contactInfo.editButton.Visible = true;
+			contactInfo.deleteButton.Visible = true;
+			contactInfo.ShowDialog();
+		}
+
 	}
 }
