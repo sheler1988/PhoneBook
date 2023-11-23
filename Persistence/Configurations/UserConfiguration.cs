@@ -22,8 +22,8 @@ internal class UserConfiguration : object, IEntityTypeConfiguration<Domain.Conta
 			;
 
 		builder
-			.HasIndex(current => current.LastName)
-			.IsUnique(unique: true)
+			.Property(current => current.LastName)
+			.IsUnicode(unicode: true)
 			;
 		// **************************************************
 
