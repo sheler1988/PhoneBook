@@ -50,7 +50,7 @@
 			// firstNameLabel
 			// 
 			firstNameLabel.AutoSize = true;
-			firstNameLabel.Location = new Point(21, 15);
+			firstNameLabel.Location = new Point(12, 9);
 			firstNameLabel.Name = "firstNameLabel";
 			firstNameLabel.Size = new Size(80, 20);
 			firstNameLabel.TabIndex = 0;
@@ -59,93 +59,93 @@
 			// lastNameLabel
 			// 
 			lastNameLabel.AutoSize = true;
-			lastNameLabel.Location = new Point(22, 62);
+			lastNameLabel.Location = new Point(12, 42);
 			lastNameLabel.Name = "lastNameLabel";
 			lastNameLabel.Size = new Size(79, 20);
-			lastNameLabel.TabIndex = 1;
+			lastNameLabel.TabIndex = 2;
 			lastNameLabel.Text = "&Last Name";
 			// 
 			// positionLabel
 			// 
 			positionLabel.AutoSize = true;
-			positionLabel.Location = new Point(37, 96);
+			positionLabel.Location = new Point(12, 141);
 			positionLabel.Name = "positionLabel";
 			positionLabel.Size = new Size(61, 20);
-			positionLabel.TabIndex = 2;
+			positionLabel.TabIndex = 8;
 			positionLabel.Text = "&Position";
 			// 
 			// CellPhoneNumberLabel
 			// 
 			CellPhoneNumberLabel.AutoSize = true;
-			CellPhoneNumberLabel.Location = new Point(21, 141);
+			CellPhoneNumberLabel.Location = new Point(12, 75);
 			CellPhoneNumberLabel.Name = "CellPhoneNumberLabel";
 			CellPhoneNumberLabel.Size = new Size(137, 20);
-			CellPhoneNumberLabel.TabIndex = 3;
+			CellPhoneNumberLabel.TabIndex = 4;
 			CellPhoneNumberLabel.Text = "&Cell Phone Number";
 			// 
 			// officePhoneNumberLabel
 			// 
 			officePhoneNumberLabel.AutoSize = true;
-			officePhoneNumberLabel.Location = new Point(22, 183);
+			officePhoneNumberLabel.Location = new Point(12, 108);
 			officePhoneNumberLabel.Name = "officePhoneNumberLabel";
 			officePhoneNumberLabel.Size = new Size(152, 20);
-			officePhoneNumberLabel.TabIndex = 4;
+			officePhoneNumberLabel.TabIndex = 6;
 			officePhoneNumberLabel.Text = "&Office Phone Number";
 			// 
 			// emailLabel
 			// 
 			emailLabel.AutoSize = true;
-			emailLabel.Location = new Point(52, 228);
+			emailLabel.Location = new Point(12, 174);
 			emailLabel.Name = "emailLabel";
 			emailLabel.Size = new Size(46, 20);
-			emailLabel.TabIndex = 5;
+			emailLabel.TabIndex = 10;
 			emailLabel.Text = "&Email";
 			// 
 			// firstNameBox
 			// 
-			firstNameBox.Location = new Point(188, 12);
+			firstNameBox.Location = new Point(188, 6);
 			firstNameBox.Name = "firstNameBox";
-			firstNameBox.Size = new Size(125, 27);
-			firstNameBox.TabIndex = 6;
+			firstNameBox.Size = new Size(294, 27);
+			firstNameBox.TabIndex = 1;
 			// 
 			// lastNameBox
 			// 
-			lastNameBox.Location = new Point(188, 59);
+			lastNameBox.Location = new Point(188, 39);
 			lastNameBox.Name = "lastNameBox";
-			lastNameBox.Size = new Size(125, 27);
-			lastNameBox.TabIndex = 7;
+			lastNameBox.Size = new Size(294, 27);
+			lastNameBox.TabIndex = 3;
 			// 
 			// positionBox
 			// 
-			positionBox.Location = new Point(188, 96);
+			positionBox.Location = new Point(188, 138);
 			positionBox.Name = "positionBox";
-			positionBox.Size = new Size(125, 27);
-			positionBox.TabIndex = 8;
+			positionBox.Size = new Size(294, 27);
+			positionBox.TabIndex = 9;
 			// 
 			// cellPhoneNumberBox
 			// 
-			cellPhoneNumberBox.Location = new Point(188, 138);
+			cellPhoneNumberBox.Location = new Point(188, 72);
 			cellPhoneNumberBox.Name = "cellPhoneNumberBox";
-			cellPhoneNumberBox.Size = new Size(125, 27);
-			cellPhoneNumberBox.TabIndex = 9;
+			cellPhoneNumberBox.Size = new Size(294, 27);
+			cellPhoneNumberBox.TabIndex = 5;
 			// 
 			// officePhoneNumberBox
 			// 
-			officePhoneNumberBox.Location = new Point(188, 180);
+			officePhoneNumberBox.Location = new Point(188, 105);
 			officePhoneNumberBox.Name = "officePhoneNumberBox";
-			officePhoneNumberBox.Size = new Size(125, 27);
-			officePhoneNumberBox.TabIndex = 10;
+			officePhoneNumberBox.Size = new Size(294, 27);
+			officePhoneNumberBox.TabIndex = 7;
 			// 
 			// emailBox
 			// 
-			emailBox.Location = new Point(188, 225);
+			emailBox.Location = new Point(188, 171);
 			emailBox.Name = "emailBox";
-			emailBox.Size = new Size(125, 27);
+			emailBox.Size = new Size(294, 27);
 			emailBox.TabIndex = 11;
 			// 
 			// saveButton
 			// 
-			saveButton.Location = new Point(7, 278);
+			saveButton.Location = new Point(188, 204);
 			saveButton.Name = "saveButton";
 			saveButton.Size = new Size(94, 29);
 			saveButton.TabIndex = 12;
@@ -155,30 +155,30 @@
 			// 
 			// resetButton
 			// 
-			resetButton.Location = new Point(107, 278);
+			resetButton.Location = new Point(288, 204);
 			resetButton.Name = "resetButton";
 			resetButton.Size = new Size(94, 29);
-			resetButton.TabIndex = 13;
+			resetButton.TabIndex = 14;
 			resetButton.Text = "&Reset";
 			resetButton.UseVisualStyleBackColor = true;
 			resetButton.Click += ResetButton_Click;
 			// 
 			// cancelButton
 			// 
-			cancelButton.Location = new Point(207, 278);
+			cancelButton.Location = new Point(388, 204);
 			cancelButton.Name = "cancelButton";
 			cancelButton.Size = new Size(94, 29);
-			cancelButton.TabIndex = 14;
+			cancelButton.TabIndex = 16;
 			cancelButton.Text = "&Cancel";
 			cancelButton.UseVisualStyleBackColor = true;
 			cancelButton.Click += CancelButton_Click;
 			// 
 			// editButton
 			// 
-			editButton.Location = new Point(307, 278);
+			editButton.Location = new Point(188, 204);
 			editButton.Name = "editButton";
 			editButton.Size = new Size(94, 29);
-			editButton.TabIndex = 15;
+			editButton.TabIndex = 13;
 			editButton.Text = "&Edit";
 			editButton.UseVisualStyleBackColor = true;
 			editButton.Visible = false;
@@ -186,10 +186,10 @@
 			// 
 			// deleteButton
 			// 
-			deleteButton.Location = new Point(407, 278);
+			deleteButton.Location = new Point(288, 204);
 			deleteButton.Name = "deleteButton";
 			deleteButton.Size = new Size(94, 29);
-			deleteButton.TabIndex = 16;
+			deleteButton.TabIndex = 15;
 			deleteButton.Text = "&Delete";
 			deleteButton.UseVisualStyleBackColor = true;
 			deleteButton.Visible = false;
@@ -199,7 +199,8 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(512, 330);
+			CancelButton = cancelButton;
+			ClientSize = new Size(494, 240);
 			ControlBox = false;
 			Controls.Add(deleteButton);
 			Controls.Add(editButton);
@@ -218,6 +219,8 @@
 			Controls.Add(positionLabel);
 			Controls.Add(lastNameLabel);
 			Controls.Add(firstNameLabel);
+			MaximumSize = new Size(512, 287);
+			MinimumSize = new Size(512, 287);
 			Name = "ContactForm";
 			Text = "Add New Contact";
 			ResumeLayout(false);

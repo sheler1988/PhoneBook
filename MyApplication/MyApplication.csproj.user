@@ -10,11 +10,5 @@
     <Compile Update="PhoneBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StartupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="UpdateProfileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

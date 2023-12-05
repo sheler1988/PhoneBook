@@ -32,15 +32,15 @@
 			searchButton = new Dtat.Windows.Forms.Button();
 			contactListDataGrid = new Dtat.Windows.Forms.DataGridView();
 			exitButton = new Dtat.Windows.Forms.Button();
-			textBox1 = new Dtat.Windows.Forms.TextBox();
+			searchTextBox = new Dtat.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)contactListDataGrid).BeginInit();
 			SuspendLayout();
 			// 
 			// addButton
 			// 
-			addButton.Anchor = AnchorStyles.None;
+			addButton.Anchor = AnchorStyles.Left;
 			addButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			addButton.Location = new Point(12, 486);
+			addButton.Location = new Point(12, 649);
 			addButton.Name = "addButton";
 			addButton.Size = new Size(132, 40);
 			addButton.TabIndex = 0;
@@ -50,13 +50,14 @@
 			// 
 			// searchButton
 			// 
-			searchButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			searchButton.Location = new Point(178, 486);
+			searchButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			searchButton.Location = new Point(331, 8);
 			searchButton.Name = "searchButton";
-			searchButton.Size = new Size(132, 40);
+			searchButton.Size = new Size(89, 27);
 			searchButton.TabIndex = 1;
 			searchButton.Text = "&Search";
 			searchButton.UseVisualStyleBackColor = true;
+			searchButton.Click += SearchButton_Click;
 			// 
 			// contactListDataGrid
 			// 
@@ -64,21 +65,21 @@
 			contactListDataGrid.AllowUserToDeleteRows = false;
 			contactListDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			contactListDataGrid.EditMode = DataGridViewEditMode.EditProgrammatically;
-			contactListDataGrid.Location = new Point(12, 12);
+			contactListDataGrid.Location = new Point(12, 41);
 			contactListDataGrid.MultiSelect = false;
 			contactListDataGrid.Name = "contactListDataGrid";
 			contactListDataGrid.ReadOnly = true;
 			contactListDataGrid.RowHeadersVisible = false;
 			contactListDataGrid.RowHeadersWidth = 51;
 			contactListDataGrid.RowTemplate.Height = 29;
-			contactListDataGrid.Size = new Size(460, 455);
+			contactListDataGrid.Size = new Size(408, 593);
 			contactListDataGrid.TabIndex = 2;
 			contactListDataGrid.CellContentDoubleClick += ContactListDataGrid_CellContentDoubleClick;
 			// 
 			// exitButton
 			// 
 			exitButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-			exitButton.Location = new Point(710, 486);
+			exitButton.Location = new Point(288, 649);
 			exitButton.Name = "exitButton";
 			exitButton.Size = new Size(132, 40);
 			exitButton.TabIndex = 3;
@@ -86,25 +87,26 @@
 			exitButton.UseVisualStyleBackColor = true;
 			exitButton.Click += ExitButton_Click;
 			// 
-			// textBox1
+			// searchTextBox
 			// 
-			textBox1.Location = new Point(502, 184);
-			textBox1.Multiline = true;
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(325, 65);
-			textBox1.TabIndex = 4;
+			searchTextBox.Location = new Point(12, 8);
+			searchTextBox.Name = "searchTextBox";
+			searchTextBox.Size = new Size(313, 27);
+			searchTextBox.TabIndex = 4;
 			// 
 			// PhoneBookForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(932, 557);
-			Controls.Add(textBox1);
+			ClientSize = new Size(433, 701);
+			ControlBox = false;
+			Controls.Add(searchTextBox);
 			Controls.Add(exitButton);
 			Controls.Add(contactListDataGrid);
 			Controls.Add(searchButton);
 			Controls.Add(addButton);
-			MinimumSize = new Size(0, 180);
+			MaximumSize = new Size(451, 748);
+			MinimumSize = new Size(451, 748);
 			Name = "PhoneBookForm";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "PhoneBook";
@@ -120,6 +122,6 @@
 		private Dtat.Windows.Forms.Button searchButton;
 		private Dtat.Windows.Forms.DataGridView contactListDataGrid;
 		private Dtat.Windows.Forms.Button exitButton;
-		private Dtat.Windows.Forms.TextBox textBox1;
+		private Dtat.Windows.Forms.TextBox searchTextBox;
 	}
 }

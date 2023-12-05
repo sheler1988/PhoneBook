@@ -113,6 +113,8 @@ namespace MyApplication
 
 		private void EditButton_Click(object sender, EventArgs e)
 		{
+			this.Text = "Edit Contact";
+			this.AcceptButton = saveButton;
 			firstNameBox.Enabled = true;
 			lastNameBox.Enabled = true;
 			positionBox.Enabled = true;
@@ -129,31 +131,31 @@ namespace MyApplication
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
 			var dialogResult =
-			System.Windows.Forms.MessageBox.Show(text:"Are you sure to delete this contact?",
-				caption:"Delete Verification",
-				buttons:MessageBoxButtons.YesNo,
-				icon:MessageBoxIcon.Question,
-				defaultButton:MessageBoxDefaultButton.Button2);
+			System.Windows.Forms.MessageBox.Show(text: "Are you sure to delete this contact?",
+				caption: "Delete Verification",
+				buttons: MessageBoxButtons.YesNo,
+				icon: MessageBoxIcon.Question,
+				defaultButton: MessageBoxDefaultButton.Button2);
 
 			if (dialogResult == DialogResult.Yes)
 			{
-				
 
-			var dbContext = new Persistence.DatabaseContext();
-			if (Utility.CurrentContact != null )
-			{
-				var contact = dbContext.Contacts.Where
-					(c => c.Id == Utility.CurrentContact.Id).FirstOrDefault();
-				if ( contact != null )
+
+				var dbContext = new Persistence.DatabaseContext();
+				if (Utility.CurrentContact != null)
 				{
-					dbContext.Contacts.Remove( contact );
-					dbContext.SaveChanges();
-					Utility.CurrentContact = null;
+					var contact = dbContext.Contacts.Where
+						(c => c.Id == Utility.CurrentContact.Id).FirstOrDefault();
+					if (contact != null)
+					{
+						dbContext.Contacts.Remove(contact);
+						dbContext.SaveChanges();
+						Utility.CurrentContact = null;
+					}
 				}
-			}
 
-			_phoneBookForm.RefreshContacts();
-			this.Dispose();
+				_phoneBookForm.RefreshContacts();
+				this.Dispose();
 				Close();
 			}
 		}

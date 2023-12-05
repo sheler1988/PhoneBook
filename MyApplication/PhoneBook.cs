@@ -44,6 +44,7 @@ public partial class PhoneBookForm : Form
 	private void AddButton_Click(object sender, EventArgs e)
 	{
 		var addContactForm = new ContactForm(this);
+		addContactForm.AcceptButton = addContactForm.saveButton;
 		addContactForm.ShowDialog();
 	}
 
@@ -52,7 +53,7 @@ public partial class PhoneBookForm : Form
 	//to show a list of contacts
 	public void RefreshContacts()
 	{
-		//to read or right from/to database 
+		//to read or write from/to database 
 		var dbContext = new Persistence.DatabaseContext();
 		ContactList = dbContext.Contacts.OrderBy(c => c.FirstName).ToList();
 		contactListDataGrid.DataSource = ContactList;
@@ -64,6 +65,7 @@ public partial class PhoneBookForm : Form
 		{
 			Utility.CurrentContact = contactListDataGrid.Rows[e.RowIndex].DataBoundItem as Contacts;
 			var contactInfo = new ContactForm(this);
+			contactInfo.AcceptButton = contactInfo.editButton;
 
 			contactInfo.firstNameBox.Text = Utility.CurrentContact.FirstName;
 			contactInfo.lastNameBox.Text = Utility.CurrentContact.LastName;
@@ -88,5 +90,27 @@ public partial class PhoneBookForm : Form
 			contactInfo.ShowDialog();
 		}
 
+	}
+
+	private void SearchButton_Click(object sender, EventArgs e)
+	{
+		if (searchTextBox.Text == null || searchTextBox.Text == "")
+		{
+			RefreshContacts();
+		}
+		else
+		{
+			var dbContext = new Persistence.DatabaseContext();
+			var searchResultContacts = new List<Domain.Contacts>();
+			searchResultContacts = dbContext.Contacts.Where(c =>
+			c.FirstName.Contains(searchTextBox.Text) ||
+			c.LastName.Contains(searchTextBox.Text) ||
+			c.Position.Contains(searchTextBox.Text) ||
+			c.CellPhoneNumber.Contains(searchTextBox.Text) ||
+			c.OfficeNumber.Contains(searchTextBox.Text)
+			).ToList();
+
+			contactListDataGrid.DataSource = searchResultContacts;
+		}
 	}
 }
